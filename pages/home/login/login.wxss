@@ -1,0 +1,2 @@
+/* pages/home/login/login.wxss */
+@import "../../../style/weui.wxss";

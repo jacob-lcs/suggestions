@@ -1,0 +1,11 @@
+
+<view>
+
+  <text>用户名： {{ uInfo.username }} </text>
+
+  <view class="btn-area">
+    <button type="warn" bindtap='userchange'>切换账号</button>
+    <button bindtap='history'>查看历史</button>
+  </view>
+
+</view>

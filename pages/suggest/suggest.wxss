@@ -1,0 +1,85 @@
+/* pages/suggest/suggest.wxss */
+
+.sug_in {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20rpx;
+  border: 10px solid #eff1f1; 
+  height: 130px;
+  font-size: 30rpx;
+  background-color: #eff1f1;
+}
+
+.sug_name {
+  margin: 10px;
+  border: 5px solid #ddd;
+  height: 50px;
+}
+
+/* .sug_sub {
+  margin-top: 50rpx;
+  width: 100px;
+  align-items: center;
+} */
+
+.sug_logo {
+  width: 650rpx;
+  height: 105rpx;
+  margin-left: 35rpx;
+}
+
+.sug_icon {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 50rpx;
+  margin-bottom: 30rpx;
+}
+
+.sug_ZW {
+  background-color: #eff1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sug_xz {
+  background-color: #eff1f1;
+  height: 850rpx;
+  background-image: url('http://www.lcscoder.cn/images/bgimg.png');
+  background-repeat: no-repeat;
+  background-position-y: 0rpx;
+  background-position-x: 10rpx;
+  background-size: 100%;
+}
+
+.fankui{
+  margin-left: 80rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+ .xuank{
+  margin-top: 30rpx;
+  margin-left: 110rpx;
+  margin-right: 220rpx;
+  font-size: 35rpx;
+  zoom: 80%;
+  height: 60rpx;
+} 
+
+.btn {
+  background-color: #19C170;
+  color: #FFF;
+  margin-top: 30rpx;
+  width: 100px;
+  align-items: center;
+}
+
+.btn::after {
+  border: 0;
+}
+
+.btn_hover {
+  background-color: #FFCC00;
+}

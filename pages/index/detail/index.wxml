@@ -1,0 +1,23 @@
+<!--pages/index/detail/index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__section">
+        <view class="weui-article__section">
+           <view class="weui-article__p">
+            {{rows.content}}
+          </view> 
+          <view class="weui-article__h3">创建时间：{{rows.createdAt}} </view>
+          <view class="weui-article__h3">发布者：{{rows.writer}} </view>
+        </view>
+      </view>  
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-footer ">
+        <view class="weui-footer__text">Copyright © 2018 权益中心</view>
+      </view>
+    </view>
+  </view>
+</view>

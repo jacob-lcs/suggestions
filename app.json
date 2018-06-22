@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/suggest/suggest",
+    "pages/home/home",
+    "pages/home/login/login",
+    "pages/home/register/register",
+    "pages/home/history/history"
+  ],
+  "data": {
+    "username": "",
+    "password": ""
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "圈子",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons/history.png",
+        "selectedIconPath": "images/icons/history-s.png"
+      },
+      {
+        "text": "提出建议",
+        "pagePath": "pages/suggest/suggest",
+        "iconPath": "images/icons/all.png",
+        "selectedIconPath": "images/icons/all-s.png"
+      },
+      {
+        "text": "登录界面",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/dl.png",
+        "selectedIconPath": "images/icons/dl-s.png"
+      }
+    ]
+  }
+}
