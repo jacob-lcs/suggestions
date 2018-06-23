@@ -1,9 +1,13 @@
 //index.js
 //获取应用实例
 var Bmob = require('../../dist/Bmob-1.6.0.min.js');
+// var Bmob = require('../../dist/bmob.js');
 var common = require('../../dist/common.js');
+
 var app = getApp();
 var that;
+// var textList = [];
+// var inputVal = [];
 Page({
 
   data: {
@@ -12,14 +16,12 @@ Page({
     windowHeight: 0,
     windowWidth: 0,
     limit: 100,
+    // inputVal =[],
     textList: [],
     amodifyDiarys: false
   },
 
-
-
   onReady: function(e) {
-
     const query = Bmob.Query("text");
     query.find().then(res => {
       console.log(res)
@@ -29,8 +31,6 @@ Page({
       console.log('textList:', this.data.textList)
     });
   },
-
-
 
   onShareAppMessage: function() {
     return {
@@ -90,28 +90,9 @@ Page({
     })
 
     var k = 'http://bmob-cdn-12917.b0.upaiyun.com/2017/07/18/d99d3bb7400cb1ed808f34896bff6fcc.jpg';
-
     var newUrl = k.replace("http://bmob-cdn-12917.b0.upaiyun.com", "https://bmob-cdn-12917.bmobcloud.com")
 
     console.log(newUrl);
-
-
-    //批量更新数据
-    // var query = new Bmob.Query('text');
-    // query.find().then(function (todos) {
-    //   todos.forEach(function (todo) {
-    //     todo.set('title', "无需后端编程");
-    //   });
-    //   return Bmob.Object.saveAll(todos);
-    // }).then(function (todos) {
-    //   // 更新成功
-    // }, function (error) {
-    //   // 异常处理
-    // });
-
-
-
-
   },
   noneWindows: function() {
     that.setData({
@@ -121,7 +102,7 @@ Page({
   },
   onShow: function() {
 
-    getList(this);
+    // getList(this);
     wx.getSystemInfo({
       success: (res) => {
         that.setData({
@@ -147,192 +128,9 @@ Page({
     })
     this.onShow()
   },
-  toAddDiary: function() {
-    that.setData({
-      writeDiary: true
-    })
-  },
-  addDiary: function(event) {
-    var title = event.detail.value.title;
-    var content = event.detail.value.content;
-    var formId = event.detail.formId;
-    console.log("event", event)
-    if (!title) {
-      common.showTip("标题不能为空", "loading");
-    } else if (!content) {
-      common.showTip("内容不能为空", "loading");
-    } else {
-      that.setData({
-        loading: true
-      })
-      var currentUser = Bmob.User.current();
-
-      var User = Bmob.Object.extend("_User");
-      var UserModel = new User();
-
-      // var post = Bmob.Object.createWithoutData("_User", "594fdde53c");
-
-      //增加日记
-      var Text = Bmob.Object.extend("text");
-      var text = new Text();
-      text.set("title", title);
-      text.set("formId", formId); //保存formId
-      text.set("content", content);
-      var f = Bmob.File("a.jpg", [""]);
-      text.set("f", f);
-      if (currentUser) {
-        UserModel.id = currentUser.id;
-        text.set("own", UserModel);
-      }
-      //添加数据，第一个入口参数是null
-      text.save(null, {
-        success: function(result) {
-          // 添加成功，返回成功之后的objectId（注意：返回的属性名字是id，不是objectId），你还可以在Bmob的Web管理后台看到对应的数据
-          common.showTip('添加日记成功');
-          that.setData({
-            writeDiary: false,
-            loading: false
-          })
-
-          var currentUser = Bmob.User.current();
-
-          //成功后发送模板消息，这个只能在手机上测试，模拟器里面没有formid
-          // var temp = {
-          //   "touser": currentUser.get("openid"),
-          //   "template_id": "B-2GcobfYnptevxY8G3SdA72YLYGZpOoJO_FEHlouWg",
-          //   "page": "",
-          //   "form_id": formId,
-          //   "data": {
-          //     "keyword1": {
-          //       "value": "SDK测试内容",
-          //       "color": "#173177"
-
-          //     },
-          //     "keyword2": {
-          //       "value": "199.00"
-          //     },
-          //     "keyword3": {
-          //       "value": "123456789"
-          //     },
-          //     "keyword4": {
-          //       "value": "2015年01月05日 12:30"
-          //     }
-          //     ,
-          //     "keyword5": {
-          //       "value": "恭喜您支付成功，如有疑问请反馈与我"
-          //     }
-          //   }
-          //   , "emphasis_keyword": "keyword1.DATA"
-          // }
-          // console.log(temp);
-          // Bmob.sendMessage(temp).then(function (obj) {
-          //   console.log('发送成功');
-
-
-          // }, function (err) {
-
-          //   common.showTip('失败' + err);
-          // });
-
-
-          // 成功后发送主人模板消息，这个只需把openid改正确即可接收到， Bmob后端云公众号回复openid 
-          var temp = {
-            "touser": "oUxY3w_jURG89H5wCIvJDPjJ5s2o",
-            "template_id": "-ERkPwp0ntimqH39bggQc_Pj55a18CYLpj-Ert8-c8Y",
-            "url": "http://www.baidu.cn/",
-            "data": {
-              "first": {
-                "value": "您好，Restful 失效，请登录控制台查看。",
-                "color": "#c00"
-              },
-              "keyword1": {
-                "value": "Restful 失效"
-              },
-              "keyword2": {
-                "value": "2017-07-03 16:13:01"
-              },
-              "keyword3": {
-                "value": "高"
-              },
-              "remark": {
-                "value": "如果您十分钟内再次收到此信息，请及时处理。"
-              }
-            }
-          }
-          console.log(temp);
-          Bmob.sendMasterMessage(temp).then(function(obj) {
-            console.log('发送成功');
-
-
-          }, function(err) {
-
-            common.showTip('失败' + err);
-          });
-
-
-
-          that.onShow()
-        },
-        error: function(result, error) {
-          // 添加失败
-          common.showTip('添加日记失败，请重新发布', 'loading');
-
-        }
-      });
-    }
-
-  },
   closeLayer: function() {
     that.setData({
       writeDiary: false
-    })
-  },
-  deleteDiary: function(event) {
-
-
-    var that = this;
-
-
-
-    var objectId = event.target.dataset.id;
-    wx.showModal({
-      title: '操作提示',
-      content: '确定要删除要日记？',
-      success: function(res) {
-        if (res.confirm) {
-          //删除日记
-          var Text = Bmob.Object.extend("text");
-          // var query = new Bmob.Query('text');
-          // query.find().then(function (todos) {
-          //   return Bmob.Object.destroyAll(todos);
-          // }).then(function (todos) {
-          //   console.log(todos);
-          //   // 更新成功
-          // }, function (error) {
-          //   // 异常处理
-          // });
-
-          //创建查询对象，入口参数是对象类的实例
-          var query = new Bmob.Query(Text);
-          query.get(objectId, {
-            success: function(object) {
-              // The object was retrieved successfully.
-              object.destroy({
-                success: function(deleteObject) {
-                  console.log('删除日记成功');
-                  getList(that)
-                },
-                error: function(object, error) {
-                  console.log('删除日记失败');
-                }
-              });
-            },
-            error: function(object, error) {
-              console.log("query object fail");
-            }
-          });
-        }
-      }
     })
   },
   toModifyDiary: function(event) {
@@ -360,17 +158,17 @@ Page({
       inputVal: "",
       inputShowed: false
     });
-    getList(this);
+    getLike(this);
   },
   clearInput: function() {
     this.setData({
       inputVal: ""
     });
-    getList(this);
+    getLike(this);
   },
   inputTyping: function(e) {
     //搜索数据
-    getList(this, e.detail.value);
+    getLike(this, e.detail.value);
     this.setData({
       inputVal: e.detail.value
     });
@@ -383,104 +181,26 @@ Page({
 
 })
 
-
-/*
- * 获取数据
- */
-function getList(t, k) {
+function getLike(t, k) {
   that = t;
-
-  var query = Bmob.Query('text');
-  // var query1 = Bmob.Query('text');
-
-  //会员模糊查询
-  // if (k) {
-  //   query.equalTo("title", { "$regex": "" + k + ".*" });
-  //   query1.equalTo("content", { "$regex": "" + k + ".*" });
-  // }
-
-  //普通会员匹配查询
-  // query.equalTo("title", k);
-  // query.exists(k);
-  // query.find().then(res => {
-  //   // 返回成功
-  //   console.log(res)
-  // });
-  query.order('-createdAt');
-  query.include("own")
-  // 查询所有数据
-  // query.limit(that.data.limit);
-
-  // var mainQuery=Bmob.Query('text');
-  // mainQuery.or(query, query1);
-  // mainQuery.find().then(res => {
-  //   console.log(res)
-  //   that.setData({
-  //     textList: results
-  //   })
-  // }).catch(err => { 
-  //   console.log("查询失败: " + error.code + " " + error.message);
-  // });
-
-
-  // var mainQuery = Bmob.Query.or(query, query1);
-  // mainQuery.find({
-  //   success: function (results) {
-  //     // 循环处理查询到的数据
-  //     console.log(results);
-  //     that.setData({
-  //       textList: results
-  //     })
-  //   },
-  //   error: function (error) {
-  //     console.log("查询失败: " + error.code + " " + error.message);
-  //   }
-  // });
-}
-
-function modify(t, e) {
-  var that = t;
-  //修改日记
-  var modyTitle = e.detail.value.title;
-  var modyContent = e.detail.value.content;
-  var objectId = e.detail.value.content;
-  var thatTitle = that.data.nowTitle;
-  var thatContent = that.data.nowContent;
-  if ((modyTitle != thatTitle || modyContent != thatContent)) {
-    if (modyTitle == "" || modyContent == "") {
-      common.showTip('标题或内容不能为空', 'loading');
-    } else {
-      console.log(modyContent)
-      var Text = Bmob.Object.extend("text");
-      var query = new Bmob.Query(Text);
-      // 这个 id 是要修改条目的 id，你在生成这个存储并成功时可以获取到，请看前面的文档
-      query.get(that.data.nowId, {
-        success: function(result) {
-
-          // 回调中可以取得这个 GameScore 对象的一个实例，然后就可以修改它了
-          result.set('title', modyTitle);
-          result.set('content', modyContent);
-          result.save();
-          common.showTip('日记修改成功', 'success', function() {
-            that.onShow();
-            that.setData({
-              modifyDiarys: false
-            })
-          });
-
-          // The object was retrieved successfully.
-        },
-        error: function(object, error) {
-
-        }
-      });
+  const query = Bmob.Query("text");
+  // query.equalTo("content", "==", k);
+  query.select("content");
+  query.find().then(res => {
+    console.log(res)
+    var i;
+    var test = [];
+    for (i = 0; i < res.length; i++) {
+      if (res[i].content.indexOf(k) >= 0) {
+        console.log("成功");
+        console.log(res[i]);
+        // console.log(results[i]);
+        test[test.length] = res[i]
+        that.setData({
+          textList: null,
+          textList: test,
+        })
+      };
     }
-  } else if (modyTitle == "" || modyContent == "") {
-    common.showTip('标题或内容不能为空', 'loading');
-  } else {
-    that.setData({
-      modifyDiarys: false
-    })
-    common.showTip('修改成功', 'loading');
-  }
+  })
 }

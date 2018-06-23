@@ -46,7 +46,7 @@
 .sug_xz {
   background-color: #eff1f1;
   height: 850rpx;
-  background-image: url('http://www.lcscoder.cn/images/bgimg.png');
+  background-image: url('https://github.com/lcs1998/suggestions/blob/master/images/bgimg.png?raw=true');
   background-repeat: no-repeat;
   background-position-y: 0rpx;
   background-position-x: 10rpx;

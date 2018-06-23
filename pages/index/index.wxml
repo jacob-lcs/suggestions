@@ -1,9 +1,9 @@
 <!--index.wxml-->
+<import src="../../style/footer.wxml" />
 <view class="page">
   <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
     <view class="page__bd">
 
-      <!--<button type="primary" bindtap="toAddText" hover-class="other-button-hover"> 增加日记 </button>-->
       <view class="weui-panel">
         <view class="weui-search-bar">
           <view class="weui-search-bar__form">
@@ -33,12 +33,6 @@
               <view class="weui-media-box__info">
                 <view class="weui-media-box__info__meta weui-media-time">时间：{{item.updatedAt}}</view>
                 <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:{{item.writer}}</view>
-                <!-- <view class="weui-media-box__info__meta weui-media-box__info__operate"> 
-                  <icon type="cancel dels" size="16"></icon>
-                  <text class="del" catchtap="deleteText" data-id="{{item.objectId}}">删除</text>
-                  <icon type="success edits" size="16"></icon>
-                  <text catchtap="toModifyText" data-id="{{item.objectId}}" data-content="{{item.content}}" data-title="{{item.title}}">编辑</text>
-                </view> -->
               </view>
             </navigator>
           </block>
