@@ -1,18 +1,35 @@
-// pages/home/history/history.js
+// pages/home/mysug/mysug.js
+var Bmob = require('../../../dist/Bmob-1.6.0.min.js');
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+
+    rows:[],
   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (e) {
+
+    console.log('e:',e)
+
+    const query2 = Bmob.Query("text");
+    query2.equalTo("writer", "==", e.username);
+    query2.find().then(res => {
+      console.log('mysug_res', res)
+      this.setData({
+        rows: res
+      })
+    });
+
+
   },
 
   /**

@@ -6,7 +6,7 @@
     "pages/home/home",
     "pages/home/login/login",
     "pages/home/register/register",
-    "pages/home/history/history"
+    "pages/home/mysug/mysug"
   ],
   "data": {
     "username": "",

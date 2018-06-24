@@ -105,6 +105,9 @@ Page({
     query.set("classes", this.data.classes)
     query.set("content", this.data.suggestion)
     query.set("writer", app.globalData.userInfo.username)
+    query.set("viewed", 0)
+    query.set("ding",0)
+    query.set("checked", false)
     query.save().then(res => {
       console.log(res)
       wx.showModal({

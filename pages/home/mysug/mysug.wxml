@@ -1,0 +1,17 @@
+<!--pages/home/mysug/mysug.wxml-->
+
+<view class="weui-panel__hd">我发表的</view>
+<view class="weui-panel__bd">
+
+  <block wx:if="{{rows.length>0}}">
+    <navigator class="weui-media-box weui-media-box_text" wx:for="{{rows}}" wx:key="item" url="../../index/detail/index?objectId={{item.objectId}}">
+      <!-- <view class="weui-media-box__title weui-media-box__title_in-text">
+                {{item.title}}</view> -->
+      <view class="weui-media-box__desc">{{ item.content }}</view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta weui-media-time">时间：{{item.updatedAt}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:{{item.writer}}</view>
+      </view>
+    </navigator>
+  </block>
+</view>

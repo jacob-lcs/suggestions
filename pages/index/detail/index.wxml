@@ -5,10 +5,13 @@
       <view class="weui-article__section">
         <view class="weui-article__section">
            <view class="weui-article__p">
-            {{rows[0].content}}
+            {{rows.content}}
           </view> 
-          <view class="weui-article__h3">创建时间：{{rows[0].createdAt}} </view>
-          <view class="weui-article__h3">发布者：{{rows[0].writer}} </view>
+          <view class="weui-article__h3">创建时间：{{rows.createdAt}} </view>
+          <view class="weui-article__h3">发布者：{{rows.writer}} </view>
+          <view class="weui-article__h3">已浏览：{{rows.viewed}} </view>
+          <view class="weui-article__h3">是否被查看：{{rows.checked}} </view>
+          <button bindtap='zan'>顶 + {{zans}}</button>
         </view>
       </view>
     </view>

@@ -25,7 +25,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-      this.data.uInfo = app.globalData.userInfo
+
+      // this.data.uInfo = app.globalData.userInfo
+      this.setData({'uInfo': app.globalData.userInfo})
       if (this.data.uInfo) {
         console.log('存在用户，显示详情', this.data.uInfo)
       }
