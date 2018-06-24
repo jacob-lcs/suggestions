@@ -1,5 +1,6 @@
 // pages/index/detail/index.js
-var Bmob = require('../../../dist/bmob.js');
+// var Bmob = require('../../../dist/bmob.js');
+var Bmob = require('../../../dist/Bmob-1.6.0.min.js');
 Page({
   data: {
     rows: {}
@@ -9,40 +10,28 @@ Page({
 
     console.log(e.objectId)
     var objectId = e.objectId;
-    var that = this;
-    // if (!e.objectId) {
-    //   common.showTip("请重新进入", "loading");
-    //   return false;
-    // }
 
-    var Text = Bmob.Object.extend("text");
-    var query = new Bmob.Query(Text);
+    const query = Bmob.Query("text");
+    query.equalTo("objectId", "==", objectId);
+    console.log("读取数据成功");
 
-    query.get(objectId, {
-      success: function (result) {
-        console.log(result, result.id);
-
-        that.setData({
-          rows: result,
-
-        })
-        // The object was retrieved successfully.        
-      },
-      error: function (result, error) {
-        console.log("查询失败");
-      }
+    query.find().then(res => {
+      console.log(res);
+      this.setData({
+        rows: res
+      });
     });
   },
-  onReady: function () {
+  onReady: function() {
     // 页面渲染完成
   },
-  onShow: function () {
+  onShow: function() {
     // 页面显示
   },
-  onHide: function () {
+  onHide: function() {
     // 页面隐藏
   },
-  onUnload: function () {
+  onUnload: function() {
     // 页面关闭
   }
 })

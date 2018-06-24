@@ -27,8 +27,6 @@
         <view class="weui-panel__bd">
           <block wx:if="{{textList.length>0}}">
             <navigator class="weui-media-box weui-media-box_text" wx:for="{{textList}}" wx:key="textItem" url="/pages/index/detail/index?objectId={{item.objectId}}">
-              <!-- <view class="weui-media-box__title weui-media-box__title_in-text">
-                {{item.title}}</view> -->
               <view class="weui-media-box__desc">{{ item.content }}</view>
               <view class="weui-media-box__info">
                 <view class="weui-media-box__info__meta weui-media-time">时间：{{item.updatedAt}}</view>
@@ -39,7 +37,7 @@
           <block wx:else>
             <view class="weui-media-box weui-media-box_text">
               <view class="weui-media-box__title weui-media-box__title_in-text">
-                暂无内容，请点击右下角添加</view>
+                暂无内容，欢迎给我们提出建议</view>
               <view class="weui-media-box__desc"></view>
 
             </view>
