@@ -12,9 +12,9 @@
       <text class='fankui'>*反馈类别选择：</text>
       <view class='xuank'>
         <radio-group class="radio-group" bindchange="radioChange">
-          <label class="radio" wx:for="{{items}}" wx:key="*this">
+          <label class="radio" wx:for="{{items}}" wx:key="item">
             <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-            <text decode="{{true}}"> &nbsp;&nbsp;</text>
+            <!-- <text decode="{{true}}"> &nbsp;&nbsp;</text> -->
           </label>
 
         </radio-group>

@@ -21,9 +21,22 @@
           </view>
           <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
+        <view class="weui-cells__title">分类</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">当前选择</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{classes}}">
+                <view class="weui-input">{{classes[index]}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
 
 
-        <view class="weui-panel__hd">帖子列表</view>
+        <view class="weui-panel__hd">帖子列表（{{textList.length}}条）</view>
         <view class="weui-panel__bd">
           <block wx:if="{{textList.length>0}}">
             <navigator class="weui-media-box weui-media-box_text" wx:for="{{textList}}" wx:key="textItem" url="/pages/index/detail/index?objectId={{item.objectId}}">

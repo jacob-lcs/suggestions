@@ -31,7 +31,7 @@
         "selectedIconPath": "images/icons/all-s.png"
       },
       {
-        "text": "登录界面",
+        "text": "我的",
         "pagePath": "pages/home/home",
         "iconPath": "images/icons/dl.png",
         "selectedIconPath": "images/icons/dl-s.png"
