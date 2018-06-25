@@ -9,3 +9,7 @@
   font-size: 30rpx;
   background-color: #eff1f1;
 }
+
+.comments_button{
+  margin-top: 50rpx;
+}

@@ -17,6 +17,8 @@ Page({
     classes: ['全部', '教学', '后勤', '课余', '其他'],
     index: 0
   },
+
+
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
 
@@ -137,13 +139,24 @@ Page({
     });
     console.log("onshow函数运行");
     const query = Bmob.Query("text");
-    query.find().then(res => {
-      console.log(res)
-      this.setData({
-        'textList': res
-      })
-      console.log('textList:', this.data.textList)
-    });
+    query.order("-createdAt");
+    if (this.data.index == 0) {
+      query.find().then(res => {
+        console.log(res)
+        this.setData({
+          textList: res
+        })
+      });
+    }
+    else {
+      query.equalTo("classes", "==", this.data.classes[this.data.index]);
+      query.find().then(res => {
+        console.log(res)
+        this.setData({
+          textList: res
+        })
+      });
+    }
   },
   pullUpLoad: function(e) {
     var limit = that.data.limit + 2

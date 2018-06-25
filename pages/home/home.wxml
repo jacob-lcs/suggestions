@@ -1,14 +1,19 @@
 
-<view>
+<block wx:if="{{uInfo==null}}">
+  <view class="weui-panel__hd">您未登录，请点击切换账号去登录</view>
+</block>
 
-  <text>用户名： {{ uInfo.username }} </text>
+<block wx:else>
+  <view>
 
-  <view class="btn-area">
-    <navigator url='mysug/mysug?username={{uInfo.username}}'>我发表的</navigator>
+    <text>用户名： {{ uInfo.username }} </text>
+    <view class="btn-area">
+      <navigator url='mysug/mysug?username={{uInfo.username}}'>我发表的</navigator>
+    </view>
+
   </view>
+</block>
 
-  <view class="btn-area">
-    <button type="warn" bindtap='userchange'>切换账号</button>
-  </view>
-
+<view class="btn-area">
+  <button type="warn" bindtap='userchange'>切换账号</button>
 </view>

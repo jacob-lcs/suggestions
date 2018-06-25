@@ -16,7 +16,7 @@ Page({
     console.log("用户切换账号")
     app.globalData.userInfo = null
     console.log(app.globalData.userInfo)
-    wx.redirectTo({
+    wx.navigateTo({
       url: 'login/login',
     })
   },
