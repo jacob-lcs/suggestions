@@ -15,7 +15,6 @@
           <navigator class="weui-media-box weui-media-box_text" url="/pages/index/comment/comment?objectId={{rows.objectId}}">
             <button>评论</button>
           </navigator>
-          <text>{{rows.objectId}}</text>
         </view>
       </view>
     </view>

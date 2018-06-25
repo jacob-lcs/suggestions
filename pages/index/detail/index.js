@@ -1,30 +1,56 @@
 // pages/index/detail/index.js
 var Bmob = require('../../../dist/Bmob-1.6.0.min.js');
+var app = getApp();
 Page({
   data: {
     rows: {},
     zans: 0,
     PlId: '',
-    objectId:''
+    objectId: ''
   },
-
   zan: function(e) {
-    var zant = this.data.zans + 1;
-    this.setData({
-      zans: zant
-    })
+    const qu1 = Bmob.Query("ding");
+    qu1.equalTo("textID", "==", this.data.objectId);
+    qu1.equalTo("userID", "==", app.globalData.userInfo.objectId);
+    qu1.find().then(res => {
+      if (res.length != 0) {
+        wx.showModal({
+          title: '提示',
+          content: '每个人只能赞一次哦',
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      } else {
+        var zant = this.data.zans + 1;
+        this.setData({
+          zans: zant
+        })
+        var query = Bmob.Query('ding');
+        query.set("textID", this.data.objectId)
+        query.set("userID", app.globalData.userInfo.objectId)
+        query.save().then(res => {
+          console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
+        var qu = Bmob.Query('text');
+        qu.get(this.data.objectId).then(res => {
 
-    var qu = Bmob.Query('text');
-    qu.get(this.data.objectId).then(res => {
+          console.log('resviews__', res.viewed)
+          res.set('ding', res.ding + 1)
+          this.data.rows.ding = res.ding + 1
+          res.save()
+        }).catch(err => {
+          console.log(err)
+        })
+      }
 
-      console.log('resviews__', res.viewed)
-      res.set('ding', res.ding + 1)
-      this.data.rows.ding = res.ding + 1
-      res.save()
-    }).catch(err => {
-      console.log(err)
-    })
-
+    });
   },
 
   onLoad: function(e) {
