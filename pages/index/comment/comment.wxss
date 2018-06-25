@@ -1,0 +1,11 @@
+/* pages/index/comment/comment.wxss */
+@import "../../../style/weui.wxss";
+
+
+.sug_in {
+  margin-top: 20rpx;
+  border: 10rpx solid #eff1f1;
+  height: 130rpx;
+  font-size: 30rpx;
+  background-color: #eff1f1;
+}

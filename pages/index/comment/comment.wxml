@@ -1,0 +1,35 @@
+<!--pages/index/comment/comment.wxml-->
+<view class="weui-panel__hd">评论列表（{{textList.length}}条）</view>
+<view class="weui-panel__bd">
+  <block wx:if="{{textList.length>0}}">
+    <view class="weui-media-box weui-media-box_text" wx:for="{{textList}}" wx:key="textItem">
+      <view class="weui-media-box__desc">{{ item.comment }}</view>
+      <view class="weui-media-box__info">
+        <view class="weui-media-box__info__meta weui-media-time">时间：{{item.userID}}</view>
+        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:{{item.textID}}</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">
+        暂无评论，欢迎提出建议</view>
+      <view class="weui-media-box__desc"></view>
+    </view>
+  </block>
+
+</view>
+<view class="sug_in">
+  <textarea value='{{pinglun}}' bindinput="sugInput" maxlength='300rpx' placeholder='最长输入140字哦' maxlength='140' />
+</view>
+<view>
+  <button bindtap="tijiao">提交</button>
+</view>
+
+<view class="page__ft">
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-footer ">
+      <view class="weui-footer__text">Copyright © 2018 权益中心</view>
+    </view>
+  </view>
+</view>

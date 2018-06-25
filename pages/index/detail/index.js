@@ -4,27 +4,23 @@ Page({
   data: {
     rows: {},
     zans: 0,
-    ojbectId: ''
+    PlId: '',
+    objectId:''
   },
 
   zan: function(e) {
-    var that = this;
-    var zant = this.data.zans+1;
+    var zant = this.data.zans + 1;
     this.setData({
-      zans:zant
+      zans: zant
     })
 
     var qu = Bmob.Query('text');
-    qu.get(that.data.objectId).then(res => {
+    qu.get(this.data.objectId).then(res => {
 
       console.log('resviews__', res.viewed)
       res.set('ding', res.ding + 1)
-      // res.set('viewed', res.viewed + 1)
-      that.data.rows.ding = res.ding + 1
+      this.data.rows.ding = res.ding + 1
       res.save()
-      that.setData({
-        rows: res,
-      })
     }).catch(err => {
       console.log(err)
     })
@@ -50,7 +46,7 @@ Page({
       that.setData({
         rows: res,
         objectId: objectId,
-        zans:res.ding
+        zans: res.ding
       });
       console.log('rows', that.data.rows);
     }).catch(err => {

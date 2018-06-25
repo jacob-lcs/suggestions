@@ -1,22 +1,17 @@
 //index.js
 //获取应用实例
 var Bmob = require('../../dist/Bmob-1.6.0.min.js');
-// var Bmob = require('../../dist/bmob.js');
 var common = require('../../dist/common.js');
 
 var app = getApp();
 var that;
-// var textList = [];
-// var inputVal = [];
 Page({
-
   data: {
     writeDiary: false,
     loading: false,
     windowHeight: 0,
     windowWidth: 0,
     limit: 100,
-    // inputVal =[],
     textList: [],
     amodifyDiarys: false,
     classes: ['全部', '教学', '后勤', '课余', '其他'],

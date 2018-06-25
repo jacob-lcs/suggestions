@@ -27,7 +27,60 @@ Page({
     })
   },
 
+  sugInput: function (e) {
+    this.setData({
+      suggestion: e.detail.value
+    })
+  },
 
+  loginBtnClick: function (e) {
+    console.log("类别：" + this.data.classes + " 建议：" + this.data.suggestion);
+    const query = Bmob.Query('text');
+    query.set("classes", this.data.classes)
+    query.set("content", this.data.suggestion)
+    query.set("writer", app.globalData.userInfo.username)
+    query.set("viewed", 0)
+    query.set("ding",0)
+    query.set("checked", false)
+    query.save().then(res => {
+      console.log(res)
+      wx.showModal({
+        title: '提示',
+        content: '提交成功',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.switchTab({
+              url: '../index/index',
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      
+      console.log("跳转界面")
+    }).catch(err => {
+      console.log(err)
+      wx.showModal({
+        title: '提示',
+        content: '提交失败,请检查网络',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    })
+    this.setData({
+      suggestion: "",
+      userName: ""
+    });
+  },
+
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -87,74 +140,4 @@ Page({
   upload() {
 
   },
-
-  // userNameInput: function (e) {
-  //   this.setData({
-  //     userName: e.detail.value
-  //   })
-  // },
-
-  sugInput: function (e) {
-    this.setData({
-      suggestion: e.detail.value
-    })
-  },
-
-  loginBtnClick: function (e) {
-    console.log("类别：" + this.data.classes + " 建议：" + this.data.suggestion);
-    const query = Bmob.Query('text');
-    query.set("classes", this.data.classes)
-    query.set("content", this.data.suggestion)
-    query.set("writer", app.globalData.userInfo.username)
-    query.set("viewed", 0)
-    query.set("ding",0)
-    query.set("checked", false)
-    query.save().then(res => {
-      console.log(res)
-      wx.showModal({
-        title: '提示',
-        content: '提交成功',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-            wx.switchTab({
-              url: '../index/index',
-            })
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-      
-      console.log("跳转界面")
-    }).catch(err => {
-      console.log(err)
-      wx.showModal({
-        title: '提示',
-        content: '提交失败,请检查网络',
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-    })
-    this.setData({
-      suggestion: "",
-      userName: ""
-    });
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '这是一个模态弹窗',
-    //   success: function (res) {
-    //     if (res.confirm) {
-    //       console.log('用户点击确定')
-    //     } else if (res.cancel) {
-    //       console.log('用户点击取消')
-    //     }
-    //   }
-    // })  
-  }
 })
