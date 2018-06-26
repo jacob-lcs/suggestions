@@ -2,6 +2,7 @@
 
 .zong {
   background-color: #eff1f1;
+  height: 100vh;
 }
 
 .sug_in {

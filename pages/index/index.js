@@ -15,29 +15,83 @@ Page({
     textList: [],
     amodifyDiarys: false,
     classes: ['全部', '教学', '后勤', '课余', '其他'],
-    index: 0
+    index: 0,
+    current: '全部',
+    current_scroll: '全部',
+    color: ["#72afd3, #37ecba"],
+    deg: 135,
+    showLeft1: false,
+    username: ''
   },
 
-
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-
-    this.setData({
-      index: e.detail.value
+  change:function(){
+    wx.navigateTo({
+      url: '/pages/home/login/login',
     })
+  },
 
+  home:function(){
+    wx.navigateTo({
+      url: '/pages/first/first',
+    })
+  },
+
+  toggleLeft1() {
+    if (app.globalData.userInfo == null) {
+      wx.showModal({
+        title: '提示',
+        content: '请先登录',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.navigateTo({
+              url: '/pages/home/login/login',
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+    else{
+      this.setData({
+        showLeft1: !this.data.showLeft1
+      });
+    }
+    
+  },
+  handleChange({
+    detail
+  }) {
+    this.setData({
+      current: detail.key
+    });
+  },
+
+  fabu: function() {
+    wx.navigateTo({
+      url: '/pages/home/mysug/mysug',
+    })
+  },
+
+  handleChangeScroll({
+    detail
+  }) {
+    this.setData({
+      current_scroll: detail.key
+    });
     const query = Bmob.Query("text");
     query.order("-createdAt");
-    if (this.data.index == 0) {
+    if (detail.key == "全部") {
       query.find().then(res => {
         console.log(res)
         this.setData({
           textList: res
         })
       });
-    }
-    else {
-      query.equalTo("classes", "==", this.data.classes[this.data.index]);
+    } else {
+      query.equalTo("classes", "==", detail.key);
+      console.log("detail.key", detail.key)
       query.find().then(res => {
         console.log(res)
         this.setData({
@@ -49,6 +103,7 @@ Page({
 
   onReady: function(e) {
     const query = Bmob.Query("text");
+    query.order("-createdAt");
     query.find().then(res => {
       console.log(res)
       this.setData({
@@ -56,6 +111,9 @@ Page({
       })
       console.log('textList:', this.data.textList)
     });
+    this.setData({
+      username: app.globalData.userInfo.username
+    })
   },
 
   onShareAppMessage: function() {
@@ -140,16 +198,15 @@ Page({
     console.log("onshow函数运行");
     const query = Bmob.Query("text");
     query.order("-createdAt");
-    if (this.data.index == 0) {
+    if (this.data.current_scroll == "全部") {
       query.find().then(res => {
-        console.log(res)
+        console.log("res", res)
         this.setData({
           textList: res
         })
       });
-    }
-    else {
-      query.equalTo("classes", "==", this.data.classes[this.data.index]);
+    } else {
+      query.equalTo("classes", "==", this.data.current_scroll);
       query.find().then(res => {
         console.log(res)
         this.setData({
@@ -158,7 +215,7 @@ Page({
       });
     }
   },
-  pullUpLoad: function(e) {
+  pullUpLoad: function(e) { //下拉触底
     var limit = that.data.limit + 2
     this.setData({
       limit: limit
@@ -196,12 +253,14 @@ Page({
       inputShowed: false
     });
     getLike(this);
+    this.onShow();
   },
   clearInput: function() {
     this.setData({
       inputVal: ""
     });
     getLike(this);
+    this.onShow();
   },
   inputTyping: function(e) {
     //搜索数据

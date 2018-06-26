@@ -1,0 +1,61 @@
+<!--pages/first/first.wxml-->
+<view class="round-click1" bindtap="toggleLeft1">
+   ≡
+</view>
+
+<i-drawer mode="left" visible="{{showLeft1}}" bind:close="toggleLeft1">
+  <view class='chouti'>
+    <view class='bkct'>
+      <image class='touxiang' src='/images/animal.jpg'></image>
+      <text>\n</text>
+      <view class='user'>
+        <text>{{username}}</text>
+      </view>
+    </view>
+    <view class='zhengwen'>
+      <image class='icon' src='/images/icons/fabu.png'></image><text class='xuanze' bindtap='fabu' >我的发布\n</text>
+      <image class='icon' src='/images/icons/liuyan.png'></image><text class='xuanze'>我的评论\n</text>
+      <image class='icon' src='/images/icons/xiaoxi.png'></image><text class='xuanze'>我的消息\n</text>
+      <image class='icon' src='/images/icons/change.png'></image><text class='xuanze' bindtap='change'>切换账号\n</text>
+    </view>
+    <image class='icon2' src='/images/icons/home.png' style='margin-bottom:30rpx;'></image>
+    <image class='icon3' src='/images/icons/aboutus.png' style='margin-bottom:30rpx;'></image>
+  </view>
+</i-drawer>
+
+<view class="first_main">
+  <view class="scroll_box">
+    <scroll-view scroll-x style="width: auto;overflow:hidden;">
+      <view class="item_list" wx:for="{{ listData }}" wx:key="index" data-topic="{{item}}" bindtap="goTodetail">
+        <image src='{{ item.img }}'></image>
+        <view class='item_list_buttom'>
+          <view class='tetx-h2'>
+            {{ item.title }}
+          </view>
+          <view class='item_list_buttom_text text-sub2'>
+            {{ item.text }}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="grid_main">
+    <navigator class="grid_item item1" url='/pages/index/index'>
+      <image src="/images/first/1.png"></image>
+      <text>反馈建议</text>
+    </navigator>
+    <view class="grid_item item2">
+      <image src="/images/first/2.png"></image>
+      <text>失物招领</text>
+    </view>
+    <view class="grid_item item3">
+      <image src="/images/first/3.png"></image>
+      <text>敬请期待</text>
+    </view>
+  </view>
+
+
+        <text class="weui-footer__text">Copyright © 2018 权益中心</text>
+
+</view>

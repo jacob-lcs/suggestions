@@ -1,5 +1,71 @@
 <!--pages/index/detail/index.wxml-->
 <view class="page">
+
+  <view class='titleImage'></view>
+  <scroll-view class="node_wrap">
+    <view class='titles'>
+      <image src="/images/home/usertx.jpeg"></image>
+      <view>
+        <text class='author'>
+        {{ rows.writer }} 
+      </text>
+      </view>
+    </view>
+
+    <view class="text_content">
+      {{rows.content}}
+    </view>
+
+    <view class='timer'>
+      发布于 {{ rows.createdAt }}
+    </view>
+
+
+    <view class='foot'>
+      <image src="/images/text/pinglun.png" bindtap='modalinput'></image>
+      <image src="/images/text/zan.png"></image>
+    </view>
+
+
+    <view class="weui-panel__hd">评论列表（{{commentList.length}}条）</view>
+
+    <view class="weui-panel__bd">
+      <block wx:if="{{commentList.length>0}}">
+        <view class="weui-media-box weui-media-box_text" wx:for="{{commentList}}" wx:key="commentItem">
+          <view class="weui-media-box__desc">{{ item.comment }}</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta weui-media-time">{{item.createdAt}}</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.commentator}}</view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">
+            暂无评论，欢迎提出建议</view>
+          <view class="weui-media-box__desc"></view>
+        </view>
+      </block>
+
+    </view>
+
+    <modal hidden="{{hiddenmodalput}}" title="评论" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <textarea value='{{pinglun}}' bindinput="sugInput" maxlength='300rpx' placeholder='最长输入140字哦' maxlength='140' />
+    </modal>
+
+  </scroll-view>>
+
+  <view class="page__ft">
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-footer ">
+        <view class="weui-footer__text">Copyright © 2018 权益中心</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class="page">
   <view class="page__bd">
     <view class="weui-article">
       <view class="weui-article__section">
@@ -27,4 +93,4 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->

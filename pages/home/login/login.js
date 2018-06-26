@@ -19,8 +19,8 @@ Page({
       app.globalData.userInfo=res
       console.log('跳到index')
 
-      wx.switchTab({
-        url: '/pages/home/home'
+      wx.navigateTo({
+        url: '/pages/index/index',
       })
 
     }).catch(err => {

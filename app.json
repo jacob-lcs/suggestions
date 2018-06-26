@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/first/first",
     "pages/index/index",
     "pages/index/detail/index",
     "pages/suggest/suggest",
@@ -14,29 +15,7 @@
     "password": ""
   },
   "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#20B2AA"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "text": "圈子",
-        "pagePath": "pages/index/index",
-        "iconPath": "images/icons/history.png",
-        "selectedIconPath": "images/icons/history-s.png"
-      },
-      {
-        "text": "提出建议",
-        "pagePath": "pages/suggest/suggest",
-        "iconPath": "images/icons/all.png",
-        "selectedIconPath": "images/icons/all-s.png"
-      },
-      {
-        "text": "我的",
-        "pagePath": "pages/home/home",
-        "iconPath": "images/icons/dl.png",
-        "selectedIconPath": "images/icons/dl-s.png"
-      }
-    ]
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "white"
   }
 }

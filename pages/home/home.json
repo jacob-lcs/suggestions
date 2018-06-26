@@ -1,3 +1,10 @@
 {
-  "navigationBarTitleText":"个人中心"
+  "window": {
+    "navigationBarTitleText": "个人中心"
+  },
+
+  "usingComponents": {
+    "i-card": "/dist/card/index"
+  }
 }
+

@@ -1,44 +1,8 @@
 <!--pages/home/login/login.wxml-->
-
-<!-- <view class="container">
-  <view class="page-body">
-    <form catchsubmit="formSubmit">
-
-      <view class="page-section">
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd">
-              <input class="weui-input" name="userId" placeholder="用户名" />
-            </view>
-          </view>
-        </view>
-      </view>
-
-      <view class="page-section">
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd">
-              <input class="weui-input" name="userPw" password type="text" placeholder="密码" />
-            </view>
-          </view>
-        </view>
-      </view>
-
-      <view class="btn-area">
-        <button type="primary" formType="submit">登录</button>
-        <button type="primary" plain="true" bindtap="register">注册</button>
-      </view>
-
-    </form>
-  </view>
-</view>-->
-
-
 <view>
   <image class='about-banner1' src="/images/title.png"></image>
   <image class='login-1' src='/images/registlogo.png'></image>
 </view>
-
 
 <view class='mcontainer'>
   <view class="item">
@@ -65,7 +29,7 @@
   </view>
 
   <view class="item">
-    <view>没有账户？注册
+    <view bindtap='register' style='font-size:80%'>没有账户？注册
     </view>
   </view>
 

@@ -17,3 +17,4 @@
 <view class="btn-area">
   <button type="warn" bindtap='userchange'>切换账号</button>
 </view>
+
