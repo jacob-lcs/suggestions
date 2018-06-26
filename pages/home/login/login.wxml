@@ -1,8 +1,8 @@
 <!--pages/home/login/login.wxml-->
 
-<view class="container">
+<!-- <view class="container">
   <view class="page-body">
-    <form catchsubmit="formSubmit" catchreset="formReset">
+    <form catchsubmit="formSubmit">
 
       <view class="page-section">
         <view class="weui-cells weui-cells_after-title">
@@ -31,4 +31,42 @@
 
     </form>
   </view>
+</view>-->
+
+
+<view>
+  <image class='about-banner1' src="/images/title.png"></image>
+  <image class='login-1' src='/images/registlogo.png'></image>
+</view>
+
+
+<view class='mcontainer'>
+  <view class="item">
+    <form catchsubmit="formSubmit" style='width:100%; margin-left:60rpx' >
+      <view class="login-item">
+        <view class="login-item-info">用户名</view>
+        <view>
+          <input name="userId" />
+        </view>
+      </view>
+
+      <view class="login-item">
+        <view class="login-item-info">密码</view>
+        <view class="login-pwd">
+          <input style="flex-grow:1" name="userPw" password />
+          <text>忘记密码</text>
+        </view>
+      </view>
+
+      <view class="bottom" align="center">
+        <button formType="submit" class="login-btn" bindtap="btnClick">登录</button>
+      </view>
+    </form>
+  </view>
+
+  <view class="item">
+    <view>没有账户？注册
+    </view>
+  </view>
+
 </view>

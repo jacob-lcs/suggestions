@@ -14,8 +14,8 @@
     "password": ""
   },
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff"
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#20B2AA"
   },
   "tabBar": {
     "list": [
