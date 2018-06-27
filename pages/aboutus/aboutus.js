@@ -13,7 +13,7 @@ Page({
     listData: [{
       title: 'LCS',
       img: '/images/aboutus/lcs.jpg',
-      text: '聚焦本周科技资讯。',
+      text: 'I See You',
     },
     {
       title: 'HCH',
@@ -24,7 +24,7 @@ Page({
     {
       title: 'WSG',
       img: '/images/aboutus/wsg.jpg',
-      text: '针对当下的科技数码。',
+      text: 'Live Without Loop',
 
     }],
 

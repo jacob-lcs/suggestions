@@ -36,6 +36,12 @@ Page({
     })
   },
 
+  pl:function(){
+    wx.navigateTo({
+      url: '/pages/home/mycomment/mycomment',
+    })
+  },
+
   aboutus:function(){
     wx.navigateTo({
       url: '/pages/aboutus/aboutus',

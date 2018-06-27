@@ -34,6 +34,12 @@ Page({
     y:30,
   },
 
+  pl:function(){
+    wx.navigateTo({
+      url: '/pages/home/mycomment/mycomment',
+    })
+  },
+
   fabu: function () {
     wx.navigateTo({
       url: '/pages/home/mysug/mysug',

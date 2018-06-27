@@ -6,7 +6,8 @@
     "pages/suggest/suggest",
     "pages/home/login/login",
     "pages/home/mysug/mysug",
-    "pages/aboutus/aboutus"
+    "pages/aboutus/aboutus",
+    "pages/home/mycomment/mycomment"
   ],
   "data": {
     "username": "",
