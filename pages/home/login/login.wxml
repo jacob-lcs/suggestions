@@ -1,35 +1,51 @@
 <!--pages/home/login/login.wxml-->
-<view>
-  <image class='about-banner1' src="/images/title.png"></image>
-  <image class='login-1' src='/images/registlogo.png'></image>
+<view class='taitou'>
+  <text>上海大学权益平台</text>
 </view>
 
-<view class='mcontainer'>
-  <view class="item">
-    <form catchsubmit="formSubmit" style='width:100%; margin-left:60rpx' >
-      <view class="login-item">
-        <view class="login-item-info">用户名</view>
-        <view>
-          <input name="userId" />
+<view>
+  <image class='quan' src="/images/quan.png"></image>
+</view>
+<i-tabs i-class="tab" current="{{ current }}" color="#20B2AA" bindchange="handleChange">
+  <i-tab key="登录" title="SIGN IN"></i-tab>
+  <i-tab key="注册" title="SIGN UP"></i-tab>
+</i-tabs>
+<view class='login'>
+  <view class='mcontainer'>
+    <view class="item">
+      <form catchsubmit="formSubmit" style='width:100%; margin-left:60rpx'>
+        <view class="login-item">
+          <view class="login-item-info">用户名</view>
+          <view>
+            <input name="userId" />
+          </view>
         </view>
-      </view>
 
-      <view class="login-item">
-        <view class="login-item-info">密码</view>
-        <view class="login-pwd">
-          <input style="flex-grow:1" name="userPw" password />
-          <text>忘记密码</text>
+        <view class="login-item">
+          <view class="login-item-info">密码</view>
+          <view class="login-pwd">
+            <input style="flex-grow:1" name="userPw" password />
+          </view>
         </view>
-      </view>
-
-      <view class="bottom" align="center">
-        <button formType="submit" class="login-btn" bindtap="btnClick">登录</button>
-      </view>
-    </form>
+        <view hidden='{{hidden}}'>
+          <view class="login-item">
+            <view class="login-item-info">邮箱</view>
+            <view>
+              <input name="userEm" />
+            </view>
+          </view>
+        </view>
+        <view class="bottom" align="center" hidden='{{!hidden}}'>
+          <button formType="submit" class="login-btn">登录</button>
+        </view>
+        <view class="bottom" align="center" hidden='{{hidden}}'>
+          <button formType="submit" class="login-btn">注册</button>
+        </view>
+      </form>
+    </view>
   </view>
-
-  <view class="item">
-    <view bindtap='register' style='font-size:80%'>没有账户？注册
+  <view class="item" hidden='{{!hidden}}'>
+    <view style='font-size:80%'>没有账户？请注册
     </view>
   </view>
 

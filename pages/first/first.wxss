@@ -2,6 +2,39 @@
 @import "/style/iconfont.wxss";
 @import "/pages/index/index.wxss";
 @import "../../style/weui.wxss";
+
+movable-area {
+
+  /* background-color: #ccc; */
+  overflow: hidden;
+} 
+
+ movable-view {
+  height: 300rpx;
+  width:  200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.touxiang {
+  margin: 0;
+  border-radius: 50%;
+  width: 180rpx;
+  height: 180rpx;
+  border: 8rpx solid white;
+}
+
+.username{
+  height: 100rpx;
+  color: black;
+}
+
+
+
+
 .container {
   height: 100%;
   display: flex;
@@ -55,6 +88,7 @@
   width: 93%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -102,6 +136,7 @@ background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
+  margin-bottom: 60rpx;
 }
 
 .item_list {
@@ -140,27 +175,6 @@ background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   color: rgba(0, 0, 0, 0.5);
 }
 
-.listText {
-  display: inline-block;
-  width: 228rpx;
-  text-align: center;
-  margin-top: 10rpx;
-}
-
-.storyList {
-  position: absolute;
-  top: 480rpx;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 88%;
-  margin: auto;
-  background-color: #fff;
-  border-radius: 40rpx 40rpx 0 0;
-  overflow: hidden;
-  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
-}
-
 .scrollView {
   position: absolute;
   bottom: 0;
@@ -168,49 +182,9 @@ background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   overflow: hidden;
 }
 
-.storyList .Head {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 96rpx;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.storyList .Head .headLeft {
-  margin-left: 40rpx;
-}
-
-.storyList .Head .headRight {
-  color: #02ad58;
-  margin-right: 40rpx;
-}
-
-.storyList .story {
-  display: flex;
-  align-items: center;
-  height: 180rpx;
-  border-bottom: 1px solid #e5e5e5;
-  margin: 0 3%;
-}
-
-.storyList .story view {
-  margin: 0 32rpx;
-  font-size: 30rpx;
-  font: medium;
-  line-height: 46rpx;
-}
-
-.storyList .story image {
-  flex: 0 0 180rpx;
-  width: 180rpx;
-  height: 120rpx;
-  margin-left: 28rpx;
-  border-radius: 4px;
-}
-
 .icon-right {
   font-size: 26rpx;
   margin-left: 10rpx;
   vertical-align: middle;
 }
+

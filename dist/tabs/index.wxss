@@ -8,7 +8,7 @@
   justify-content: space-around;
   align-items: center;
   -webkit-box-align: center;
-  background: #fff;
+  background: #FFF;
 }
 
 .i-tabs::after {
@@ -22,7 +22,7 @@
   transform-origin: 0 0;
   pointer-events: none;
   box-sizing: border-box;
-  border: 0 solid #e9eaec;
+  /* border: 0 solid #e9eaec; */
   border-bottom-width: 1px;
 }
 

@@ -8,38 +8,74 @@ Page({
    * 页面的初始数据
    */
   data: {
+    current: '登录',
+    current_scroll: '登录',
+    hidden:true
+  },
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+    console.log("current发生变换：",this.data.current)
+    if (this.data.current == "登录") {
+      this.setData({
+        hidden: true
+      })
+    }
+    else {
+      this.setData({
+        hidden: false
+      })
+    }
+  },
+
+  handleChangeScroll({ detail }) {
+    this.setData({
+      current_scroll: detail.key
+    });
+    console.log("current_scroll发生变换：", this.data.current)
   },
 
   //登录
   formSubmit: function (e) {
     var value = e.detail.value
-    console.log('form发生了submit事件，携带数据为：', value)
-    Bmob.User.login(value["userId"], value["userPw"]).then(res => {
-      console.log(res)
-      app.globalData.userInfo=res
-      console.log('跳到index')
-
-      wx.navigateTo({
-        url: '/pages/index/index',
+    if (this.data.current == '登录'){
+      console.log('form发生了submit事件，携带数据为：', value)
+      Bmob.User.login(value["userId"], value["userPw"]).then(res => {
+        console.log(res)
+        app.globalData.userInfo = res
+        console.log('跳到index')
+        wx.navigateTo({
+          url: '/pages/first/first',
+        })
+      }).catch(err => {
+        console.log(err)
+        wx.showToast({
+          title: '用户名或密码输入错误',
+          icon: 'none',
+          duration: 2000
+        })
       })
-
-    }).catch(err => {
-      console.log(err)
-      wx.showToast({
-        title: '用户名或密码输入错误',
-        icon: 'none',
-        duration: 2000
-      })
-    })
+    }
+    else{
+      console.log('form发生了regist事件，携带数据为：', value)
+      var that = this;
+      let params = {
+        username: value["userId"],
+        password: value["userPw"],
+        email: value["userEm"],
+      }
+      Bmob.User.register(params).then(res => {
+        console.log('注册成功', res)
+        wx.showModal({
+          title: '提示',
+          content: '注册成功，请登录'
+        })
+      }).catch(err => {
+        console.log(err)
+      });
+    }
   },
-
-  register: function (e) {
-    console.log('跳到注册')
-    wx.navigateTo({
-      url: '../register/register'
-    })
-  },
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -52,7 +88,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

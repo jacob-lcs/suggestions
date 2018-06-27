@@ -28,11 +28,11 @@
   font-size: 14px;
   text-align: center;
   box-sizing: border-box;
-  color: #80848f;
+  color: #80848F;
 }
 
 .i-tabs-tab-title-current {
-  color:#20B2AA;
+   color:#20B2AA
 }
 
 .i-tabs-tab-scroll {

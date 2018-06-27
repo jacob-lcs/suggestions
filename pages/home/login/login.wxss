@@ -1,74 +1,119 @@
 /* pages/home/login/login.wxss */
 @import "../../../style/weui.wxss";
 
-.mcontainer{
-  height:85%;
-  display:flex;
-  flex-direction:column;
+.quan {
+  width: 230rpx;
+  height: 210rpx;
+  margin-left: 275rpx;
+  margin-top: 5vh;
+}
+
+.login {
+  margin-top: 5vh;
+}
+ .regist{
+  margin-top: 5vh
+ }
+
+.taitou {
+  width: 100%;
+  text-align: center;
+  color: #dcdcdc;
+  font-size: 30rpx;
+  margin-top: 2vh;
+}
+
+.taitou {
+  width: 100%;
+  text-align: center;
+  color: #dcdcdc;
+  font-size: 30rpx;
+  margin-top: 2vh;
+}
+
+.tab {
+  margin-top: 5vh;
+}
+
+.mcontainer {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.item{
-  flex-grow:1;
-  height:20%;
+
+.item {
+  flex-grow: 1;
+  height: 20%;
   overflow: hidden;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:90%;
+  width: 90%;
   padding: 0 2%;
 }
-.login-1{
-  width:750rpx;
-  height: 380rpx; 
+
+.login-1 {
+  width: 750rpx;
+  height: 380rpx;
 }
-.login-item{
+
+.login-item {
   width: 90%;
-  margin-top:30rpx;
+  margin-top: 30rpx;
   border-bottom: 2px solid #eee;
-  flex-grow:1;
-  display:flex;
-  flex-direction:column;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 20rpx;
 }
-.login-pwd{
+
+.login-pwd {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
   align-items: center;
 }
-.login-pwd text{
+
+.login-pwd text {
   height: 100%;
   font-size: 14px;
-  color:#888;
+  color: #888;
   display: flex;
 }
-.login-btn{
-  width: 70%;
+
+.login-btn {
+  width: 60%;
   color: white;
-  background-color:#20B2AA;
-  border-radius:60px;
-  font-size:14px;
-  align-items: center
+  /* background-color: #20b2aa; */
+  border-radius: 60px;
+  font-size: 14px;
+  align-items: center;
+  background-image: linear-gradient(to right,  #009efd,#2af598);
+  box-shadow: 3px 3px 5px #B0C4DE
 }
-.login-btn:hovor{
-  width:80%;
-  color:white;
+
+.login-btn:hovor {
+  width: 80%;
+  color: white;
   border-radius: 0;
 }
-.login-item-info{
+
+.login-item-info {
   font-size: 14px;
   font-weight: bold;
-  color:#808080;
+  color: #808080;
 }
-.bottom{
+
+.bottom {
   width: 90%;
-  margin-top:80rpx;
-  flex-grow:1;
-  display:flex;
-  flex-direction:column;
+  margin-top: 80rpx;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 20rpx;
 }

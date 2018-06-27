@@ -58,7 +58,6 @@ Page({
         showLeft1: !this.data.showLeft1
       });
     }
-    
   },
   handleChange({
     detail
@@ -81,7 +80,7 @@ Page({
       current_scroll: detail.key
     });
     const query = Bmob.Query("text");
-    query.order("-createdAt");
+    query.order("-ding");
     if (detail.key == "全部") {
       query.find().then(res => {
         console.log(res)
@@ -103,7 +102,7 @@ Page({
 
   onReady: function(e) {
     const query = Bmob.Query("text");
-    query.order("-createdAt");
+    query.order("-ding");
     query.find().then(res => {
       console.log(res)
       this.setData({
@@ -197,7 +196,7 @@ Page({
     });
     console.log("onshow函数运行");
     const query = Bmob.Query("text");
-    query.order("-createdAt");
+    query.order("-ding");
     if (this.data.current_scroll == "全部") {
       query.find().then(res => {
         console.log("res", res)

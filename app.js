@@ -16,9 +16,22 @@ App({
     } else {
       console.log('无用户，或用户已退出登录')
     }
+
+
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        that.globalData.windowWidth = res.windowWidth
+        that.globalData.windowHeight = res.windowHeight
+      }
+    })
+
   },
 
   globalData: {
     userInfo: null,
+    windowWidth: 200,
+    windowHeight: 300,
   }
 })

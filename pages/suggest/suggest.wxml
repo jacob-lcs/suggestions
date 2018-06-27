@@ -1,11 +1,7 @@
 <!--pages/suggest/suggest.wxml-->
+
 <view class='zong'>
-  <view class='title'>
-    <image src='../../images/title.png' class='sug_logo'></image>
-  </view>
-  <view class='sug_ZW'>
-    <image src='../../images/sug_icon.png' class='sug_icon'></image>
-  </view>
+<text>\n</text>
   <view class='sug_xz'>
     <text>\n</text>
     <text class='fankui'>*反馈类别选择：</text>
@@ -15,16 +11,14 @@
           <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
           <!-- <text decode="{{true}}"> &nbsp;&nbsp;</text> -->
         </label>
-
       </radio-group>
-
     </view>
     <text>\n</text>
     <text class='fankui'>*我要说：</text>
     <!-- <input class="sug_in" value='{{suggestion}}' bindinput="sugInput" /> -->
     <view class="sug_in">
-      <textarea value='{{suggestion}}' bindinput="sugInput" maxlength='300rpx' placeholder='最长输入140字哦' maxlength='140' white-space:nowrap/>
+      <textarea value='{{suggestion}}' bindinput="sugInput"  placeholder='最长输入140字哦' />
     </view>
-    <button class='btn' hover-class='btn_hover' bindtap="loginBtnClick">确定</button>
+    <button class='btn' hover-class='btn_hover' bindtap="loginBtnClick">发 布</button>
   </view>
 </view>

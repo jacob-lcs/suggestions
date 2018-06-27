@@ -59,6 +59,12 @@ page {
   font-size: 20px;
 }
 
+.zans{
+  margin-top: 15rpx;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+}
+
 .timer {
   margin-top: 40rpx;
   margin-right: 40rpx;

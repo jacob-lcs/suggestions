@@ -10,15 +10,16 @@ Page({
    */
   data: {
     userName: '',
-    classes: "后勤",
+    classes: "教学",
     items: [{
         name: '教学',
-        value: '教学'
+        value: '教学',
+        checked: 'true'
       },
       {
         name: '后勤',
         value: '后勤',
-        checked: 'true'
+        
       },
       {
         name: '课余',
@@ -94,8 +95,8 @@ Page({
             success: function(res) {
               if (res.confirm) {
                 console.log('用户点击确定')
-                wx.switchTab({
-                  url: '../index/index',
+                wx.navigateTo({
+                  url: '/pages/index/index',
                 })
               } else if (res.cancel) {
                 console.log('用户点击取消')
