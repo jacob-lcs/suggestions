@@ -46,7 +46,7 @@ Page({
       console.log(res)
       wx.showModal({
         title: '提示',
-        content: '提交成功',
+        content: '提交成功，请下拉刷新。',
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
@@ -197,7 +197,29 @@ Page({
   },
   onUnload: function() {
     // 页面关闭
-  }
+  },
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    const query = Bmob.Query("comment");
+    query.equalTo("textID", "==", this.data.objectId);
+    query.find().then(res => {
+      console.log(res)
+      this.setData({
+        'commentList': res
+      })
+      console.log('commentList:', this.data.commentList)
+    });
+
+    //模拟加载
+    setTimeout(function () {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 500);
+  },
+
 })
 
 

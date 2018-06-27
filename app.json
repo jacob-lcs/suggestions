@@ -1,14 +1,11 @@
 {
   "pages": [
-   
     "pages/first/first",
     "pages/index/index",
     "pages/index/detail/index",
     "pages/suggest/suggest",
-    "pages/home/home",
     "pages/home/login/login",
     "pages/home/mysug/mysug",
-    "pages/index/comment/comment",
     "pages/aboutus/aboutus"
   ],
   "data": {

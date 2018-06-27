@@ -22,9 +22,6 @@
 
     </view>
 
-
-
-
     <view class='zhengwen'>
       <image class='icon' src='/images/icons/fabu.png'></image>
       <text class='xuanze' bindtap='fabu'>我的发布\n</text>

@@ -44,7 +44,7 @@
       <text class='xuanze' bindtap='change'>切换账号\n</text>
     </view>
     <image class='icon2' bindtap='home' src='/images/icons/home.png' style='margin-bottom:30rpx;'></image>
-    <image class='icon3' src='/images/icons/aboutus.png' style='margin-bottom:30rpx;'></image>
+    <image class='icon3' bindtap='aboutus' src='/images/icons/aboutus.png' style='margin-bottom:30rpx;'></image>
   </view>
 </i-drawer>
 <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
@@ -59,13 +59,17 @@
   <scroll-view lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" style="height: {{windowHeight}}px;  ">
     <view class="page__bd">
       <view class="weui-panel">
-        <view class="weui-panel__hd">帖子列表（{{textList.length}}条）</view>
+        <view class="weui-panel__hd">帖子列表（{{textList.length}}条）
+          <view class='paixu'>
+            <text space='ensp' bindtap='shijian'> 按时间排序</text>
+            <text bindtap='zanpai'> 按赞排序</text>
+          </view>
+        </view>
         <view class="weui-panel__bd">
           <block wx:if="{{textList.length>0}}">
             <navigator class='i-card' wx:for="{{textList}}" wx:key="textItem" url="/pages/index/detail/index?objectId={{item.objectId}}">
               <i-card title="{{item.writer}}" extra="{{item.ding}}人赞过 · {{item.classes}}" thumb="/images/animal.jpg">
                 <view class="zw" slot="content">{{ item.content }}</view>
-                <!-- <view slot="footer">尾部内容</view> -->
               </i-card>
             </navigator>
 

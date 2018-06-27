@@ -11,8 +11,8 @@ Page({
     loading: false,
     windowHeight: 0,
     windowWidth: 0,
-    limit: 100,
-    textList: [],
+    limit: 1000,
+    textList: {},
     amodifyDiarys: false,
     classes: ['全部', '教学', '后勤', '课余', '其他'],
     index: 0,
@@ -33,6 +33,12 @@ Page({
   home:function(){
     wx.navigateTo({
       url: '/pages/first/first',
+    })
+  },
+
+  aboutus:function(){
+    wx.navigateTo({
+      url: '/pages/aboutus/aboutus',
     })
   },
 
@@ -183,6 +189,27 @@ Page({
       modifyDiarys: ""
     })
   },
+  shijian:function(){
+    const query = Bmob.Query("text");
+    query.order("-createdAt");
+      query.find().then(res => {
+        console.log("res", res)
+        this.setData({
+          textList: res
+        })
+      });
+  },
+
+  zanpai:function(){
+    const query = Bmob.Query("text");
+    query.order("-ding");
+    query.find().then(res => {
+      console.log("res", res)
+      this.setData({
+        textList: res
+      })
+    });
+  },
   onShow: function() {
 
     // getList(this);
@@ -214,13 +241,13 @@ Page({
       });
     }
   },
-  pullUpLoad: function(e) { //下拉触底
-    var limit = that.data.limit + 2
-    this.setData({
-      limit: limit
-    })
-    this.onShow()
-  },
+  // pullUpLoad: function(e) { //下拉触底
+  //   var limit = that.data.limit + 2
+  //   this.setData({
+  //     limit: limit
+  //   })
+  //   this.onShow()
+  // },
   closeLayer: function() {
     that.setData({
       writeDiary: false
@@ -279,8 +306,6 @@ Page({
 function getLike(t, k) {
   that = t;
   const query = Bmob.Query("text");
-  // query.equalTo("content", "==", k);
-  query.select("content");
   query.find().then(res => {
     console.log(res)
     var i;
@@ -288,8 +313,6 @@ function getLike(t, k) {
     for (i = 0; i < res.length; i++) {
       if (res[i].content.indexOf(k) >= 0) {
         console.log("成功");
-        console.log(res[i]);
-        // console.log(results[i]);
         test[test.length] = res[i]
         that.setData({
           textList: null,
@@ -298,4 +321,5 @@ function getLike(t, k) {
       };
     }
   })
+  console.log("TextList",t.data.textList)
 }

@@ -12,10 +12,20 @@
 }
 
 .round-click {
-    font-size: 60rpx;
-    max-width: 80rpx;
-    color: gray;
-    text-align: center;
+  font-size: 60rpx;
+  max-width: 80rpx;
+  color: gray;
+  text-align: center;
+}
+.paixu{
+  text-align: right;
+  margin-top: 0rpx;
+}
+.round-click {
+  font-size: 60rpx;
+  max-width: 80rpx;
+  color: gray;
+  text-align: center;
 }
 
 .round-click {
@@ -53,13 +63,13 @@
   /* background: linear-gradient(-255deg, #a8edea ,#fed6e3); */
   background-color: white;
   color: gray;
-  font-size:50rpx;
+  font-size: 50rpx;
 }
 
 .user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user {
@@ -87,7 +97,6 @@
   margin-left: 110rpx;
 }
 
-
 .touxiang {
   border-radius: 50%;
   width: 180rpx;
@@ -111,9 +120,11 @@
   width: 47rpx;
   margin-left: 20rpx;
 }
-.zw{
+
+.zw {
   font-size: 35rpx;
 }
+
 .bkct {
   width: 80vw;
   height: 500rpx;
