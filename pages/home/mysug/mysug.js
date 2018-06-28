@@ -20,7 +20,7 @@ Page({
 
     console.log('e:',e)
     const query2 = Bmob.Query("text");
-    query2.equalTo("writer", "==", e.username);
+    query2.equalTo("writer", "==", app.globalData.userInfo.username);
     query2.find().then(res => {
       console.log('mysug_res', res)
       this.setData({
