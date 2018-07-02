@@ -60,17 +60,17 @@
   <view class="grid_main">
 
     <navigator class="grid_item item1" url='/pages/index/index'>
-      <image src="/images/first/1.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/979a56b640bcdc1d8063215613249c1f.png"></image>
       <text>反馈建议</text>
     </navigator>
 
     <view class="grid_item item2">
-      <image src="/images/first/2.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/899e6c1640dea53180eac1e7cece7bd6.png"></image>
       <text>失物招领</text>
     </view>
 
     <view class="grid_item item3">
-      <image src="/images/first/3.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/f645525940773a028075686dc3a6c95c.png"></image>
       <text>敬请期待</text>
     </view>
 
@@ -79,17 +79,17 @@
 
   <view class="grid_main">
     <view class="grid_item item3">
-      <image src="/images/first/3.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/f645525940773a028075686dc3a6c95c.png"></image>
       <text>敬请期待</text>
     </view>
 
     <view class="grid_item item3">
-      <image src="/images/first/3.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/f645525940773a028075686dc3a6c95c.png"></image>
       <text>敬请期待</text>
     </view>
 
     <view class="grid_item item3">
-      <image src="/images/first/3.png"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/f645525940773a028075686dc3a6c95c.png"></image>
       <text>敬请期待</text>
     </view>
   </view>

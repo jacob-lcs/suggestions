@@ -12,18 +12,18 @@ Page({
 
     listData: [{
       title: 'LCS',
-      img: '/images/aboutus/lcs.jpg',
+      img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/4829561140e42af080601c0b657c57e7.jpg',
       text: 'I See You',
     },
     {
       title: 'HCH',
-      img: '/images/aboutus/hch.jpg',
+      img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/4804fc1640c28cc080db4bbc7218a91d.jpg',
       text: '体验千奇百怪的 。',
 
     },
     {
       title: 'WSG',
-      img: '/images/aboutus/wsg.jpg',
+      img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/06/30/b36f46ff408c4aa680de42fbd3f4e098.jpg',
       text: 'Live Without Loop',
 
     }],
