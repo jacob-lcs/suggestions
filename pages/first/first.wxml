@@ -14,7 +14,7 @@
       <movable-area style="height: 45vh; width: 100vw;">
 
         <movable-view class="movable_view" x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" damping="50">
-           <image class="touxiang" src='/images/animal.jpg'></image>  
+           <image class="touxiang" src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/b22d90db40e019ae80311275b3c1db7e.jpg'></image>  
             <text class="username">{{username}}</text>
         </movable-view>
 
@@ -23,17 +23,17 @@
     </view>
 
     <view class='zhengwen'>
-      <image class='icon' src='/images/icons/fabu.png'></image>
+      <image class='icon' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/efece59940556cc6809205ca6a457077.png'></image>
       <text class='xuanze' bindtap='fabu'>我的发布\n</text>
-      <image class='icon' src='/images/icons/liuyan.png'></image>
+      <image class='icon' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/1478aa2e40e16da58072b7707141141a.png'></image>
       <text class='xuanze' bindtap='pl'>我的评论\n</text>
-      <!-- <image class='icon' src='/images/icons/xiaoxi.png'></image>
+      <!-- <image class='icon' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/89e7d356405645ff805fdbb5c4bf51f3.png'></image>
       <text class='xuanze'>我的消息\n</text> -->
-      <image class='icon' src='/images/icons/change.png'></image>
+      <image class='icon' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/bd593848403f6b15803b7e9b976ce280.png'></image>
       <text class='xuanze' bindtap='change'>切换账号\n</text>
     </view>
-    <image class='icon2' src='/images/icons/home.png' style='margin-bottom:30rpx;'></image>
-    <image class='icon3' src='/images/icons/aboutus.png' style='margin-bottom:30rpx;' bindtap='to_aboutus'></image>
+    <image class='icon2' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/746e6ac940d9c7e9801ffad64c874593.png' style='margin-bottom:30rpx;'></image>
+    <image class='icon3' src='http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/38bd436740d30c2080650d7b80e52807.png' style='margin-bottom:30rpx;' bindtap='to_aboutus'></image>
   </view>
 
 </i-drawer>

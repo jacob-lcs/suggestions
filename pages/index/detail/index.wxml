@@ -4,7 +4,7 @@
   <view class='titleImage'></view>
   <scroll-view class="node_wrap">
     <view class='titles'>
-      <image src="/images/home/usertx.jpeg"></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/b22d90db40e019ae80311275b3c1db7e.jpg"></image>
       <view>
         <text class='author'>
         {{ rows.writer }} 
@@ -22,8 +22,8 @@
 
 
     <view class='foot'>
-      <image src="/images/text/pinglun.png" bindtap='modalinput'></image>
-      <image src="/images/text/zan.png" bindtap='zan'></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/3951d92840eb328c80446f9da154b9cb.png" bindtap='modalinput'></image>
+      <image src="http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/468787e04034e190808696c6e52ba5a7.png" bindtap='zan'></image>
       <text class='zans'>{{zans}}</text>
     </view>
 

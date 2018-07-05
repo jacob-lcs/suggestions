@@ -4,7 +4,7 @@
 </view>
 
 <view>
-  <image class='quan' src="/images/quan.png"></image>
+  <image class='quan' src="http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/758efcf440dc38598019c59ef878c2b7.png"></image>
 </view>
 <i-tabs i-class="tab" current="{{ current }}" color="#20B2AA" bindchange="handleChange">
   <i-tab key="登录" title="SIGN IN"></i-tab>

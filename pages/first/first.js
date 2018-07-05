@@ -8,19 +8,19 @@ Page({
   data: {
     listData: [{
         title: '上海大学计算机学院',
-        img: '/images/TimerPaper@2x.png',
+        img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/ad2263e640f8bfb5807939ba44c81664.png',
         text: '上海大学计算机工程与科学学院始建于1988年，由上海工业大学计算机工程系和上海科学技术大学计算机科学系联合成立。',
       },
       {
         title: '自强4000',
-        img: '/images/UWP@2x.png',
+        img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/566b620e4017128980fad04e087996f1.png',
         text: '2013年建成的第三代集群式高性能计算机“自强4000”共有162个节点机，2480个计算核。',
 
       },
       {
         title: '热评文章',
         topic: '数码',
-        img: '/images/Diss@2x.png',
+        img: 'http://bmob-cdn-20067.b0.upaiyun.com/2018/07/05/ed369dd040bd000c80f37478970489b8.png',
         text: '针对当下的科技数码大事件作出评论，对新鲜产品第一时间上手体验，分享第一手的观点与感受，既有深度又有风度。',
         total: "",
         time: ""
